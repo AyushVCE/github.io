@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIKAS Constructions & Engineer's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .heading-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .heading-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a5276; /* Deep Blue */
+            margin-bottom: 10px;
+        }
+        .heading-section p {
+            font-size: 1rem;
+            color: #5d6d7e; /* Slate Gray */
+        }
+        .services-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; /* Use flexbox for vertical alignment */
+            flex-direction: column;
+            justify-content: space-between; /* Push content to top and bottom */
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #667080;
+            margin-bottom: 20px;
+        }
+        .service-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            height: 200px; /* Added fixed height for images */
+            object-fit: cover; /* Ensure images cover the area, no distortion */
+        }
+        .contact-section {
+            text-align: center;
+            background-color: #f7f9fc; /* Very light background */
+            padding: 40px;
+            border-radius: 12px;
+        }
+        .contact-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a5276; /* Deep Blue */
+            margin-bottom: 20px;
+        }
+        .contact-section p {
+            font-size: 1rem;
+            color: #5d6d7e; /* Slate Gray */
+            margin-bottom: 30px;
+        }
+        .contact-button {
+            background-color: #3498db; /* Modern blue */
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #217dbb; /* Darker blue on hover */
+        }
+
+        /* Added for the Jagadhri location */
+        .location-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .location-section h2 {
+            font-size: 2rem;
+            color: #1a5276; /* Deep Blue */
+            margin-bottom: 10px;
+        }
+        .location-section p {
+            font-size: 1rem;
+            color: #5d6d7e; /* Slate Gray */
+        }
+
+        /* Styles for the logo */
+        .logo-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo-section img {
+            max-width: 200px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #007bff;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .service-card p{
+            color: #555;
+        }
+
+        .contact-section {
+            background-color: #e9ecef;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact-section h2{
+            color: #007bff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .contact-button{
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #0056b3;
+        }
+        .location-section h2{
+            color:#007bff;
+            font-size: 2rem;
+        }
+
+/* Modern Constructions Styles */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/random/1920x1080?modern+building');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #f1c40f; /* Yellow */
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #ecf0f1; /* Light Gray */
+        }
+        .hero a {
+            background-color: #e74c3c; /* Red */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .hero a:hover {
+            background-color: #c0392b; /* Darker Red */
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery img {
+            transition: transform 0.3s;
+            border-radius: 0.5rem;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .project-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .project-card:hover{
+             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .project-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 1rem;
+            color: #34495e; /* Dark Gray */
+        }
+        .project-card p {
+            font-size: 1rem;
+            padding: 0 1rem 1rem 1rem;
+            color: #667080;
+        }
+        #about {
+            background-color: #f7f9fc;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        #about h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a5276; /* Deep Blue */
+            margin-bottom: 2rem;
+        }
+        #about p {
+            font-size: 1.1rem;
+            color: #5d6d7e; /* Slate Gray */
+            max-width: 60%;
+            margin: 0 auto;
+        }
+        #contact {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a5276; /* Deep Blue */
+            margin-bottom: 2rem;
+        }
+        #contact form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        #contact label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease; /* Added transition */
+        }
+        #contact input:focus,
+        #contact textarea:focus {
+            outline: none;
+            border-color: #3498db; /* Highlight on focus */
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.25); /* Add shadow */
+        }
+
+        #contact textarea {
+            resize: vertical;
+        }
+        #contact button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #2ecc71; /* Green */
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #contact button:hover {
+            background-color: #27ae60; /* Darker Green */
+        }
+
+        .first-color {
+            background: #233142;
+        }
+
+        .second-color {
+            background: #455d7a;
+        }
+
+        .third-color {
+            background: #f95959;
+        }
+
+        .fourth-color {
+            background: #e3e3e3;
+        }
+
+    </style>
+</head>
+<body class="bg-light-gray font-inter">
+    <header class="bg-white shadow-md py-4">
+        <div class="container">
+            <div class="logo-section">
+                <img src=""D:\Website\Logo.jpg""
+            </div>
+            <h1 class="text-2xl font-semibold text-gray-800">VIKAS Constructions & Engineer's</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="heading-section">
+            <h2 class="text-blue-700">About Us</h2>
+            <p class="text-gray-600">We are a leading construction company specializing in roads, buildings, and all civil works. With years of experience, we deliver high-quality projects tailored to our clients' needs.</p>
+        </section>
+
+        <section class="services-section">
+            <div class="service-card">
+                <img src="https://source.unsplash.com/random/600x400?highway" alt="Road Construction">
+                <h3 class="text-blue-600">Road Construction</h3>
+                <p class="text-gray-700">We build durable and efficient roads, focusing on quality materials and modern techniques.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://source.unsplash.com/random/600x400?modern+building" alt="Building Construction">
+                <h3 class="text-blue-600">Building Construction</h3>
+                <p class="text-gray-700">From residential to commercial buildings, we ensure structural integrity and aesthetic appeal.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://source.unsplash.com/random/600x400?infrastructure" alt="Civil Works">
+                <h3 class="text-blue-600">Civil Works</h3>
+                <p class="text-gray-700">We handle a wide range of civil engineering projects, including infrastructure development and maintenance.</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="text-blue-700">Contact Us</h2>
+            <p class="text-gray-600">Get in touch for inquiries, project proposals, or to learn more about our services.</p>
+            <p class="text-gray-700">Email: Ayush@VikasCE.com</p>
+            <p class="text-gray-700">Phone: 9355525626, 8295540373</p>
+            <button class="contact-button">Contact Now</button>
+        </section>
+
+        <section class="location-section">
+            <h2 class="text-blue-700">Our Location</h2>
+            <p class="text-gray-600">We are based in Jagadhri, Haryana, and serve clients across the region.</p>
+        </section>
+    </main>
+
+    <section id="home" class="hero">
+        <div>
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">Building the Future</h2>
+            <p class="text-lg md:text-xl mb-6">Innovative designs and sustainable construction for modern cities.</p>
+            <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Explore Projects</a>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Our Projects</h2>
+            <div class="gallery grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white shadow rounded overflow-hidden">
+                    <img src="https://source.unsplash.com/random/600x400?modern+road" alt="Modern Road" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Smart Highway</h3>
+                        <p class="text-gray-600">AI-optimized road with integrated sensors for traffic management.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden">
+                    <img src="https://source.unsplash.com/random/600x400?skyscraper" alt="Skyscraper" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Eco Skyscraper</h3>
+                        <p class="text-gray-600">Sustainable high-rise with green energy solutions.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden">
+                    <img src="https://source.unsplash.com/random/600x400?smart+building" alt="Smart Building" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">AI-Powered Office</h3>
+                        <p class="text-gray-600">Intelligent building with automated climate and security systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-gray-200 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">About Us</h2>
+            <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto">
+                VIKAS Constructions & Engineer's leverages cutting-edge AI technology to design and build sustainable, efficient, and innovative infrastructure. Our team is dedicated to shaping the cities of tomorrow.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Get in Touch</h2>
+            <div class="max-w-lg mx-auto">
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700">Name</label>
+                        <input type="text" id="name" class="w-full p-2 border rounded">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700">Email</label>
+                        <input type="email" id="email" class="w-full p-2 border rounded">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700">Message</label>
+                        <textarea id="message" class="w-full p-2 border rounded" rows="4"></textarea>
+                    </div>
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 VIKAS Constructions & Engineer's. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
